@@ -24,7 +24,25 @@ class ViewController: UIViewController {
             view.addSubview(box)
             
             
-            box.backgroundColor = UIColor.green
+            //code for creating box
+            //box.backgroundColor = UIColor.green
+            
+            //code for creating random color box
+            /*
+            let red = CGFloat(arc4random() % 100) / 100
+            let green = CGFloat(arc4random() % 100) / 100
+            let blue = CGFloat(arc4random() % 100) / 100
+            
+            let c = UIColor(red: red, green: green, blue: blue, alpha: 1)
+            box.backgroundColor = c
+            */
+            
+            //random color using hue,saturation,brightness
+            
+            let hue = 1 / 10 * CGFloat(i)
+            
+            let c = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
+            box.backgroundColor = c
             
         }
       
