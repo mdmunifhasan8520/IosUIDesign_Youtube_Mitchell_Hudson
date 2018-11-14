@@ -13,26 +13,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let box = UIView(frame: CGRect(x: 50, y: 0, width: 300, height: 250))
-        box.backgroundColor = UIColor.cyan
-        view.addSubview(box)
+    
+        let w = view.bounds.width / 4
         
-        //box.center = CGPoint(x: 100, y: 500)
-        
-        //box.center.x = view.bounds.width / 6
-        box.center.y = view.bounds.height / 3
-        
-        //let r = CGRect(x: 10, y: 10, width: 280, height: 230)
-        let r = box.bounds.insetBy(dx: 10, dy: 10)
-        let smallbox = UIView(frame: r)
-        smallbox.backgroundColor = UIColor.black
-        box.addSubview(smallbox)
-        /*
-        smallbox.center.x = box.bounds.width / 2
-        smallbox.center.y = box.bounds.height / 2
-        
-        */
+        for i in 0 ... 9 {
+            let x = CGFloat(i % 4) * w
+            let y = CGFloat(i / 4) * w
+            let r = CGRect(x: x, y: y, width: w, height: w)
+            let box = UIView(frame: r.insetBy(dx: 2, dy: 2))
+            view.addSubview(box)
+            
+            
+            box.backgroundColor = UIColor.green
+            
+        }
+      
         
      
     }
